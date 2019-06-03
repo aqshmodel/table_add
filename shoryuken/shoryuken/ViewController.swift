@@ -28,9 +28,9 @@ class ViewController: UIViewController {
     @IBAction func startButton(_ sender: UIButton) {
         // アニメーションの適用
         shoryuken.animationImages = imageArray
-        // 0.2秒間隔
+        // アニメーションの長さ:2秒
         shoryuken.animationDuration = 2
-        // アニメーション再生回数
+        // アニメーション再生回数:1回
         shoryuken.animationRepeatCount = 1
         // アニメーションを開始
         shoryuken.startAnimating()
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.youWin.image = UIImage(named:"youwin")
         }
-        //1秒後に実行したい処理  タイトルに戻る
+        //1秒後にタイトルに戻る
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.youWin.image = UIImage(named:"title")
         }

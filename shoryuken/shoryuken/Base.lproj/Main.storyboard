@@ -21,15 +21,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HpU-Ia-PfE">
                                 <rect key="frame" x="0.0" y="234" width="414" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="baH-oB-aj4"/>
-                                    <constraint firstAttribute="height" constant="200" id="mG2-3c-7wg"/>
+                                    <constraint firstAttribute="height" constant="200" id="eMY-9c-Bfj"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ghb-mC-zHP">
                                 <rect key="frame" x="0.0" y="64" width="414" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="0nQ-Xe-BGJ"/>
-                                    <constraint firstAttribute="width" constant="140" id="IDv-fx-dw6"/>
+                                    <constraint firstAttribute="height" constant="150" id="qyd-kW-B7n"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaG-GF-8oe">
