@@ -34,11 +34,10 @@ class ViewController: UIViewController {
         shoryuken.animationRepeatCount = 1
         // アニメーションを開始
         shoryuken.startAnimating()
-        
-        // 勝利宣言
-            youWin.image = UIImage(named:"youwin")
-        
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            //2秒後に実行したい処理   勝利宣言
+            self.youWin.image = UIImage(named:"youwin")
+        }
     }
     
 }
