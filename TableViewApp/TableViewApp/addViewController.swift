@@ -30,6 +30,7 @@ class addViewController: UIViewController, UITextFieldDelegate {
             enterText.text = ""
         UserDefaults.standard.set(enterWords, forKey: "write" )
         userDefaults.synchronize()
+        self.navigationController?.popViewController(animated: true)
         }
     
 }

@@ -84,7 +84,9 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Root" id="OaY-KU-ScR"/>
+                    <navigationItem key="navigationItem" title="Root" id="OaY-KU-ScR">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="LsV-Mm-wpu"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQ8-HQ-Y2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -161,7 +163,6 @@
                                 <state key="normal" title="追加"/>
                                 <connections>
                                     <action selector="addButton:" destination="kdU-Uc-r8M" eventType="touchUpInside" id="ERn-km-D1c"/>
-                                    <segue destination="gXk-ag-Qkq" kind="show" identifier="toTableView" id="Lj0-xV-Lsa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVw-1f-TLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1121.7391304347827" y="-4.0178571428571423"/>
+            <point key="canvasLocation" x="1099" y="-4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uVW-oZ-DTH">
@@ -199,7 +200,4 @@
             <point key="canvasLocation" x="-1256" y="-4"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="HIz-BD-CUM"/>
-    </inferredMetricsTieBreakers>
 </document>

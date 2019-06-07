@@ -31,7 +31,7 @@ class TableViewController: UITableViewController {
         return names.count  //nameの要素数をカウントし、戻り値にする
     }
 
-    // viewTableのセル名 NameCell
+    // viewTableのセル名 NameCell、NameCell2、NameCell3
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath)
         // Configure the cell...  配列namesのindexPathを読み込み、textLabelに代入
@@ -64,6 +64,7 @@ class TableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    
     
 
     /*
