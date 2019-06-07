@@ -16,11 +16,6 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -36,6 +31,7 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // どの行をタップしたかindexPathの値で受け取り、switchで判別。アプリ内にテキストを保存。
         switch indexPath.row {
         case 0: UserDefaults.standard.set("line1", forKey: "judge" ) 
         case 1: UserDefaults.standard.set("line2", forKey: "judge" )

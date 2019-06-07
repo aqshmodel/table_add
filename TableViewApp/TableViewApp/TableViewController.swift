@@ -18,6 +18,7 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        //  遷移前の画面でどの行をタップしたか値をアプリから受け取る
         keyWord = UserDefaults.standard.object(forKey: "judge") as? String
         }
     
@@ -42,7 +43,6 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-    
     // データ入力画面から戻った時にテーブルを再表示する
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,6 +58,7 @@ class TableViewController: UITableViewController {
             names.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+        // 消去後、配列namesのデータをアプリに保存
         UserDefaults.standard.set( names, forKey: "\(keyWord!)" )
     }
     
