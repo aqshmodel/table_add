@@ -12,12 +12,13 @@ class addViewController: UIViewController, UITextFieldDelegate {
     
     let userDefaults = UserDefaults.standard
     var enterWords = [String]()
+    let keyWord = UserDefaults.standard.object(forKey: "judge")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if UserDefaults.standard.object(forKey: "write") != nil {
-            enterWords = UserDefaults.standard.object(forKey: "write") as! [String]
+        if UserDefaults.standard.object(forKey: "\(keyWord!)") != nil {
+            enterWords = UserDefaults.standard.object(forKey: "\(keyWord!)") as! [String]
         }
     }
     
@@ -28,8 +29,7 @@ class addViewController: UIViewController, UITextFieldDelegate {
     @IBAction func addButton(_ sender: Any) {
             enterWords.append(enterText.text!)
             enterText.text = ""
-        UserDefaults.standard.set(enterWords, forKey: "write" )
-        userDefaults.synchronize()
+        UserDefaults.standard.set(enterWords, forKey: "\(keyWord!)" )
         self.navigationController?.popViewController(animated: true)
         }
     

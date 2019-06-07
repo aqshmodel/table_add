@@ -1,74 +1,70 @@
 //
-//  TableViewController.swift
+//  MainTableViewController.swift
 //  TableViewApp
 //
-//  Created by Takahiro Tsukada on 2019/06/02.
+//  Created by Takahiro Tsukada on 2019/06/07.
 //  Copyright © 2019 Takahiro Tsukada. All rights reserved.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
-    // 追加テキストの格納配列
-    var names: [String] = []
-    let userDefaults = UserDefaults.standard
-    var keyWord: String?
+class MainTableViewController: UITableViewController {
     
+    let userDefaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        keyWord = UserDefaults.standard.object(forKey: "judge") as? String
-        }
-    
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1  //0から1に変更 セクションの数
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return names.count  //nameの要素数をカウントし、戻り値にする
+        return 3 //3行あるから
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: UserDefaults.standard.set("line1", forKey: "judge" ) 
+        case 1: UserDefaults.standard.set("line2", forKey: "judge" )
+        case 2: UserDefaults.standard.set("line3", forKey: "judge" )
+        default: break
+        }
     }
 
-    // viewTableのセル名 NameCel
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath)
-        // Configure the cell...  配列namesのindexPathを読み込み、textLabelに代入
-        cell.textLabel?.text = names[indexPath.row]
-        return cell
-    }
-    
-    
-    // データ入力画面から戻った時にテーブルを再表示する
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if UserDefaults.standard.object(forKey: "\(keyWord!)") != nil {
-            names = UserDefaults.standard.object(forKey: "\(keyWord!)") as! [String]
-        }
         tableView.reloadData()
     }
-    
-    //スワイプしてセルを消去
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            names.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-        UserDefaults.standard.set( names, forKey: "\(keyWord!)" )
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
     }
-    
-    
+    */
+
+    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
-    
+    */
 
     /*
     // Override to support editing the table view.
